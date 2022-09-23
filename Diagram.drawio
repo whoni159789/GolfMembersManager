@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="uIfgpPbcNGFSIdBEs8ey" name="페이지-1">
-        <mxGraphModel dx="3087" dy="1090" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="1235" dy="765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -184,6 +184,9 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="89" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="53" target="85">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="53" value="MembersManageService" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
                     <mxGeometry x="1140" y="540" width="210" height="100" as="geometry"/>
                 </mxCell>
@@ -319,6 +322,21 @@
                         <mxPoint x="1359.8899999999999" y="840.45" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="85" target="90">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="ComDev" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="1070" y="920" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;sendData(int *cardNum)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1070" y="960" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="tcpServer" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="1290" y="1000" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;sendData(int *cardNum)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1290" y="1040" width="170" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -6,7 +6,10 @@ View::View()
     viewState = CARD_READER;
 }
 
-View::~View() {}
+View::~View() 
+{
+    delete lcd;
+}
 
 void View::setViewState(int state)
 {
@@ -33,7 +36,8 @@ void View::lcdView()
         break;
 
         case CARD_MODIFIER:
-
+            lcd->WriteStringXY(0, 0, " MembersManager ");
+            lcd->WriteStringXY(1, 0, "MODE : MODIFIER ");
         break;
     }
 }

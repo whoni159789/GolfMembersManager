@@ -1,15 +1,21 @@
 #include "Listener.h"
 #include <string.h>
 
-Listener::Listener()
+Listener::Listener(Controller *controller)
 {
     rfid = new CardReader(new SPI(10, 3000000));
     modeButton = new ManageButton(27, "ModeButton");
     checkButton = new ManageButton(28, "CheckButton");
-    controller = new Controller();
+    this->controller = controller;
 }
 
-Listener::~Listener(){}
+Listener::~Listener()
+{
+    delete rfid;
+    delete modeButton;
+    delete checkButton;
+    delete controller;
+}
 
 // CardReader(mfrc522) & ManageButton(Button) -> Listener -> Controller
 void Listener::checkEvent()

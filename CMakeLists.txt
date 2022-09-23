@@ -18,6 +18,7 @@ add_executable(${PROJECT_NAME}
     ./src/hw/Monitor/Monitor.cpp
     ./src/hw/I2C/I2C.cpp
     ./src/hw/LCD/LCD.cpp
+    ./src/hw/tcpServer/ComDev.cpp
     ./src/hw/tcpServer/tcpServer.cpp
 )
 

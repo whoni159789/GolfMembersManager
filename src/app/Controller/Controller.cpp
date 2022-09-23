@@ -1,15 +1,14 @@
 #include "Controller.h"
 #include <iostream>
 
-Controller::Controller()
+Controller::Controller(MembersManageService *membersmanageservice)
 {
-    monitor = new Monitor();
-    membersmanageservice = new MembersManageService();
+    this->membersmanageservice = membersmanageservice;
 }
 
 Controller::~Controller()
 {
-
+    delete membersmanageservice;
 }
 
 void Controller::updateEvent(DeviceData data)

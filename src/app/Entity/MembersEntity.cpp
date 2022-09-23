@@ -53,7 +53,16 @@ void MembersEntity::printMemberInfo(std::string name)
     {
         if(strcmp(member.name, name.c_str()) == 0)
         {
-            printMemberInfo(member.id);
+            printf("%04d, %s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
+            member.id,
+            member.name,
+            member.address,
+            member.phoneNumber,
+            member.cardNum[0],
+            member.cardNum[1],
+            member.cardNum[2],
+            member.cardNum[3],
+            member.cardNum[4]);
             return;
         }
     }
@@ -116,6 +125,28 @@ bool MembersEntity::findMemberInfo(int *cardNum)
     return false;
 }
 
+void MembersEntity::searchMemberInfo(int *cardNum)
+{
+    for(const auto &member : vecMembersList)
+    {
+        if(memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0)
+        {
+            printf("%s", member.name);
+        }
+    }
+}
+
+int MembersEntity::searchMemberID(int *cardNum)
+{
+    for(const auto &member : vecMembersList)
+    {
+        if(memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0)
+        {
+            return member.id;
+        }
+    }
+}
+
 void MembersEntity::addMemberInfo(MemberInfo member)
 {
     vecMembersList.push_back(member);
@@ -135,6 +166,34 @@ bool MembersEntity::delMeberInfo(int *cardNum)
     }
     return false;                                   // vector 기능을 통해 생긴 heap 영역의 배열 중간에 있는 데이터를 삭제할 때 사용 -> 해당 주소값을 입력해야함
                                                     // 하지만 insert와 erase 시에는 loading이 많아지기 때문에 좋지 않다.(array이기 때문에)
+}
+
+void MembersEntity::modifyMemberInfo(int *cardNum)
+{
+    MemberInfo tempMember;
+    tempMember.id = searchMemberID(cardNum);
+
+    std::vector<MemberInfo>::iterator itrMember;    
+    itrMember = vecMembersList.begin();             
+    for(itrMember; itrMember != vecMembersList.end() ; itrMember++)
+    {
+        if(memcmp(itrMember->cardNum, cardNum, sizeof(itrMember->cardNum)) == 0)
+        {
+            vecMembersList.erase(itrMember);
+            
+            std::cout << "Name : ";
+            std::cin >> tempMember.name;
+            std::cout << "Address : ";
+            std::cin >> tempMember.address;
+            std::cout << "PhoneNumber : ";
+            std::cin >> tempMember.phoneNumber;
+            memcpy(tempMember.cardNum, cardNum, sizeof(tempMember.cardNum));
+            
+            vecMembersList.insert(itrMember, tempMember);
+            printf("%s's information is updated!\n", tempMember.name);
+        }
+    }
+    
 }
 
 void MembersEntity::memoryToDB()

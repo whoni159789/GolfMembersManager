@@ -5,7 +5,7 @@ golfMembershipManager::golfMembershipManager()
 // -> STACK : 작은 내용 (1M), HEAP : 큰 내용 (4G)
 // Listener *listener = new Listener(&rfid);
 {
-    listener = new Listener();
+    // listener = new Listener();
 }
 
 golfMembershipManager::~golfMembershipManager()

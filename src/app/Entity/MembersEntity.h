@@ -28,6 +28,9 @@ public:
     bool findMemberInfo(int index);
     bool findMemberInfo(std::string name);
     bool findMemberInfo(int *cardNum);
+    void searchMemberInfo(int *cardNum);
+    int searchMemberID(int *cardNum);
+    void modifyMemberInfo(int *cardNum);
 };
 
 #endif

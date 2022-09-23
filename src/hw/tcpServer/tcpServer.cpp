@@ -40,13 +40,13 @@ void tcpServer::createSocket()
 
     if(bind(serverSocket_fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0)
     {
-        perror("bind()");
+        perror("bind()\n");
         return;
     }
 
     if(listen(serverSocket_fd, 8) < 0)
     {
-        perror("listen()");
+        perror("listen()\n");
         return;
     }
 }

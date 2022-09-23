@@ -4,17 +4,15 @@
 #pragma once
 
 #include "DeviceData.h"
-#include "Monitor.h"
 #include "MembersManageService.h"
 
 class Controller
 {
 private:
-    Monitor *monitor;
     MembersManageService *membersmanageservice;
 
 public:
-    Controller();
+    Controller(MembersManageService *membersmanageservice);
     ~Controller();
     void updateEvent(DeviceData data);
     

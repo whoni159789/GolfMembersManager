@@ -3,15 +3,21 @@
 #include <iostream>
 #include <cstring>
 
-MembersManageService::MembersManageService()
+MembersManageService::MembersManageService(ComDev *comdev)
 {
     membersentity = new MembersEntity();
     membersManagerState = CARD_READER;
     view = new View();
     view->lcdView();
+    this->comdev = comdev;
 }
 
-MembersManageService::~MembersManageService() {}
+MembersManageService::~MembersManageService() 
+{
+    delete membersentity;
+    delete view;
+    delete comdev;
+}
 
 void MembersManageService::updateStateEvnet(std::string devName)
 {
@@ -40,15 +46,21 @@ void MembersManageService::updateStateEvnet(std::string devName)
         case CARD_REMOVER:
             if(devName == "ModeButton")
             {
-                membersManagerState = CARD_READER;
-                printf("Changed to CARD_READER State\n");
+                membersManagerState = CARD_MODIFIER;
+                printf("Changed to CARD_MODIFIER State\n");
                 view->setViewState(membersManagerState);
             }
             view->lcdView();
         break;
 
         case CARD_MODIFIER:
-
+            if(devName == "ModeButton")
+            {
+                membersManagerState = CARD_READER;
+                printf("Changed to CARD_READER State\n");
+                view->setViewState(membersManagerState);
+            }
+            view->lcdView();
         break;
     }
 }
@@ -64,6 +76,7 @@ void MembersManageService::checkCard(int *cardNum)
             {
                 printf("Registered Member\n");
                 membersentity->printMemberInfo(cardNum);
+                comdev->sendData(cardNum);
             }
             else
             {
@@ -87,12 +100,15 @@ void MembersManageService::checkCard(int *cardNum)
         break;
 
         case CARD_REMOVER:
-            membersentity->delMeberInfo(cardNum);
-            printf("%s Removed!\n", tempMember.name);
+            if(!membersentity->findMemberInfo(cardNum))
+                printf("Not Registered Card!\n");
+            membersentity->searchMemberInfo(cardNum);
+            if(membersentity->delMeberInfo(cardNum))
+                printf(" Removed!\n");
         break;
 
         case CARD_MODIFIER:
-
+            membersentity->modifyMemberInfo(cardNum);
         break;
     }
 }
