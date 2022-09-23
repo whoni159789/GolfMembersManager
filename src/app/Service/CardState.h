@@ -1,0 +1,8 @@
+#ifndef CARDSTATE_H
+#define CARDSTATE_H
+
+#pragma once
+
+enum {CARD_READER, CARD_REGISTER, CARD_REMOVER, CARD_MODIFIER};
+
+#endif

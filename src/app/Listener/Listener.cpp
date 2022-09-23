@@ -5,6 +5,7 @@ Listener::Listener()
 {
     rfid = new CardReader(new SPI(10, 3000000));
     modeButton = new ManageButton(27, "ModeButton");
+    checkButton = new ManageButton(28, "CheckButton");
     controller = new Controller();
 }
 

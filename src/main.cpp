@@ -7,6 +7,6 @@ int main(void)
 {
     golfMembershipManager golfMembershipManager;
     golfMembershipManager.run();
-
+    
     return 0;
 }

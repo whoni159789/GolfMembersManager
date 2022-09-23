@@ -26,4 +26,9 @@ void Controller::updateEvent(DeviceData data)
     {
         membersmanageservice->updateStateEvnet(data.devName);
     }
+
+    if(data.devName == "CheckButton")
+    {
+        membersmanageservice->updateStateEvnet(data.devName);
+    }
 }

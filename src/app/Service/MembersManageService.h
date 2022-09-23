@@ -6,14 +6,15 @@
 #include <string>
 #include "MembersEntity.h"
 #include "MemberInfo.h"
-
-enum {CARD_READER, CARD_REGISTER};
+#include "View.h"
+#include "CardState.h"
 
 class MembersManageService
 {
 private:
     int membersManagerState;
     MembersEntity *membersentity;
+    View *view;
 
 public:
     MembersManageService();

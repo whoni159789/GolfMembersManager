@@ -4,6 +4,7 @@
 #pragma once
 
 #include "Listener.h"
+#include "View.h"
 
 class golfMembershipManager
 {
