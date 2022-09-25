@@ -6,7 +6,7 @@ Listener::Listener(Controller *controller)
     rfid = new CardReader(new SPI(10, 3000000));
     modeButton = new ManageButton(27, "ModeButton");
     checkButton = new ManageButton(28, "CheckButton");
-    resetButton = new ManageButton(3, "ResetButton");
+    resetButton = new ManageButton(29, "ResetButton");
     saveButton = new ManageButton(6, "SaveButton");
     this->controller = controller;
 }
