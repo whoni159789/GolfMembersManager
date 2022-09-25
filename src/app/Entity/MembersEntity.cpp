@@ -26,35 +26,13 @@ void MembersEntity::loadMembersInfo()
     fclose(fpDBData);
 }
 
-void MembersEntity::printMemberInfo(int index)
-{
-    if(index > (int)vecMembersList.size())
-    {
-        fprintf(stderr, "Out of range member count!\n");
-        return;
-    }
-
-    printf("%04d, %s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
-    vecMembersList[index].id,
-    vecMembersList[index].name,
-    vecMembersList[index].address,
-    vecMembersList[index].phoneNumber,
-    vecMembersList[index].cardNum[0],
-    vecMembersList[index].cardNum[1],
-    vecMembersList[index].cardNum[2],
-    vecMembersList[index].cardNum[3],
-    vecMembersList[index].cardNum[4]
-    );
-}
-
 void MembersEntity::printMemberInfo(std::string name)
 {
     for(const auto &member : vecMembersList)
     {
         if(strcmp(member.name, name.c_str()) == 0)
         {
-            printf("%04d, %s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
-            member.id,
+            printf("\n%s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
             member.name,
             member.address,
             member.phoneNumber,
@@ -74,8 +52,7 @@ void MembersEntity::printMemberInfo(int *cardNum)
     {
         if(memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0)
         {
-            printf("%04d, %s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
-            member.id,
+            printf("\n%s, %s, %s, %0x-%0x-%0x-%0x-%0x\n", 
             member.name,
             member.address,
             member.phoneNumber,
@@ -87,18 +64,6 @@ void MembersEntity::printMemberInfo(int *cardNum)
             return;
         }
     }
-}
-
-bool MembersEntity::findMemberInfo(int index)
-{
-    for(const auto &member : vecMembersList)
-    {
-        if(member.id == index)
-        {
-            return true;
-        }
-    }
-    return false;
 }
 
 bool MembersEntity::findMemberInfo(std::string name)
@@ -125,17 +90,6 @@ bool MembersEntity::findMemberInfo(int *cardNum)
     return false;
 }
 
-void MembersEntity::searchMemberInfo(int *cardNum)
-{
-    for(const auto &member : vecMembersList)
-    {
-        if(memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0)
-        {
-            printf("%s", member.name);
-        }
-    }
-}
-
 int MembersEntity::searchMemberID(int *cardNum)
 {
     for(const auto &member : vecMembersList)
@@ -145,6 +99,40 @@ int MembersEntity::searchMemberID(int *cardNum)
             return member.id;
         }
     }
+}
+
+char* MembersEntity::searchMemberName(int *cardNum)
+{
+    char* memberName;
+
+    for(const auto &member : vecMembersList)
+    {
+        if(memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0)
+        {
+            memberName = new char[20];
+            strcpy(memberName, member.name);
+            return memberName;
+        }
+    }
+}
+
+void MembersEntity::registerMember(int *cardNum)
+{
+    static int idCount = (int)vecMembersList.size() + 1;
+
+    MemberInfo tempMember;
+    tempMember.id = idCount;
+    std::cout << "\n Enter your Information about name, address, phonenumber\n";
+    std::cout << "Name : ";
+    std::cin >> tempMember.name;
+    std::cout << "Address : ";
+    std::cin >> tempMember.address;
+    std::cout << "PhoneNumber : ";
+    std::cin >> tempMember.phoneNumber;
+    memcpy(tempMember.cardNum, cardNum, sizeof(tempMember.cardNum));
+    addMemberInfo(tempMember);
+    std::cout << tempMember.name << " is registered!!\n"; 
+    idCount++; 
 }
 
 void MembersEntity::addMemberInfo(MemberInfo member)
@@ -160,6 +148,7 @@ bool MembersEntity::delMeberInfo(int *cardNum)
     {
         if(memcmp(itrMember->cardNum, cardNum, sizeof(itrMember->cardNum)) == 0)
         {
+            std::cout << "\n" << itrMember->name << " is deleted!\n"; 
             vecMembersList.erase(itrMember);
             return true;
         }
@@ -171,7 +160,8 @@ bool MembersEntity::delMeberInfo(int *cardNum)
 void MembersEntity::modifyMemberInfo(int *cardNum)
 {
     MemberInfo tempMember;
-    tempMember.id = searchMemberID(cardNum);
+    MemberInfo modifyMember;
+    modifyMember.id = searchMemberID(cardNum);
 
     std::vector<MemberInfo>::iterator itrMember;    
     itrMember = vecMembersList.begin();             
@@ -179,18 +169,32 @@ void MembersEntity::modifyMemberInfo(int *cardNum)
     {
         if(memcmp(itrMember->cardNum, cardNum, sizeof(itrMember->cardNum)) == 0)
         {
+            strcpy(tempMember.name, itrMember->name);
+            strcpy(tempMember.address, itrMember->address);
+            strcpy(tempMember.phoneNumber, itrMember->phoneNumber);
+
             vecMembersList.erase(itrMember);
             
+            std::cout << "\nIf you don't want to update, enter '*'\n";
             std::cout << "Name : ";
-            std::cin >> tempMember.name;
+            std::cin >> modifyMember.name;
+            if(strncmp(modifyMember.name, "*", 1) == 0)    
+                strcpy(modifyMember.name,tempMember.name);
+
             std::cout << "Address : ";
-            std::cin >> tempMember.address;
+            std::cin >> modifyMember.address;
+            if(strncmp(modifyMember.address, "*", 1) == 0)    
+                strcpy(modifyMember.address,tempMember.address);
+
             std::cout << "PhoneNumber : ";
-            std::cin >> tempMember.phoneNumber;
-            memcpy(tempMember.cardNum, cardNum, sizeof(tempMember.cardNum));
+            std::cin >> modifyMember.phoneNumber;
+            if(strncmp(modifyMember.phoneNumber, "*", 1) == 0)    
+                strcpy(modifyMember.phoneNumber,tempMember.phoneNumber);
+
+            memcpy(modifyMember.cardNum, cardNum, sizeof(modifyMember.cardNum));
             
-            vecMembersList.insert(itrMember, tempMember);
-            printf("%s's information is updated!\n", tempMember.name);
+            vecMembersList.insert(itrMember, modifyMember);
+            printf("%s's information is updated!\n", modifyMember.name);
         }
     }
     
@@ -214,7 +218,16 @@ void MembersEntity::memoryToDB()
     for(const auto &member : vecMembersList)
     {
         fwrite(&member, sizeof(member), 1, fpDBData);
-        fprintf(fpDBData2, "%05d, %s\n", member.id, member.name);
+        fprintf(fpDBData2, "%05d, %s %s %s %03x-%03x-%03x-%03x-%03x\n", 
+        member.id, 
+        member.name,
+        member.address,
+        member.phoneNumber,
+        member.cardNum[0],
+        member.cardNum[1],
+        member.cardNum[2],
+        member.cardNum[3],
+        member.cardNum[4]);
     }
     fclose(fpDBData);
     fclose(fpDBData2);

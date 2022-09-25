@@ -1,9 +1,12 @@
 <mxfile host="65bd71144e">
     <diagram id="uIfgpPbcNGFSIdBEs8ey" name="페이지-1">
-        <mxGraphModel dx="778" dy="543" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="2148" dy="929" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="99" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="6" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="6" value="Listener" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="700" y="560" width="120" height="80" as="geometry"/>
                 </mxCell>
@@ -169,47 +172,50 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="93" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" parent="1" source="49" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="49" value="Controller" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="930" y="560" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="860" y="560" width="210" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font face=&quot;맑은 고딕&quot;&gt;updateEvent()&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="930" y="580" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="51" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="6" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="920.1700000000001" y="679.55" as="sourcePoint"/>
-                        <mxPoint x="930" y="600" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="930" y="600"/>
-                        </Array>
-                    </mxGeometry>
+                <mxCell id="50" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font face=&quot;맑은 고딕&quot;&gt;updateEvent(DevicdData data)&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="860" y="580" width="210" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=blockThin;endFill=1;" parent="1" source="53" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" value="MembersManageService" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="540" width="210" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="54" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;updateStateEvent(std::string)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;checkCard(uint8_t *cardNum)&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="580" width="210" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="55" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1050" y="599.5" as="sourcePoint"/>
-                        <mxPoint x="1140" y="600" as="targetPoint"/>
-                        <Array as="points"/>
+                <mxCell id="102" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=1;strokeColor=#000000;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="53" target="57">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1260.2352941176473" y="496.8823529411766" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="MembersManageService" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="540" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="54" target="75">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="54">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1349.8235294117649" y="644.8823529411766" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span&gt;updateModeStateEvent(std::string devName)&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;updateSetStateEvent(std::string devName)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;updateResetEvent(std::string devName)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;checkCard(int *cardNum)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;updateSaveEvent(std::string devName)&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="579" width="320" height="131" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="MemberInfo" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
                     <mxGeometry x="1350" y="330" width="180" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="57" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Id : int&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Name[10] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Address[40] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;phoneNum[15] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;cardNum[5] : uint_8&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                <mxCell id="57" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Id : int&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Name[20] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Address[40] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;phoneNum[15] : char&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;cardNum[5] : int&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
                     <mxGeometry x="1350" y="370" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="59" target="57">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="MembersEntity" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
                     <mxGeometry x="1530" y="540" width="310" height="340" as="geometry"/>
                 </mxCell>
-                <mxCell id="60" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;loadMembersInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;()&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;addMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;MemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;delMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;std&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;::string Name)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;delMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(uint8_t *&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;findMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt; id) : bool&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;findMemberInfo(std::string name) : bool&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;findMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(int *&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;) : bool&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;printMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt; id)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;printMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;std&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;::string Name)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;printMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(uint8_t&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;serachMemberInfo(int *cardNum)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;searchMemberID(int *cardNum) : int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font face=&quot;맑은 고딕&quot;&gt;modifyMemberInfo(int *cardNum)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;memoryToDB&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;()&lt;/span&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                <mxCell id="60" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;loadMembersInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;()&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;registerMember(int *cardNum)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;addMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;MemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;delMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(int *&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;) : bool&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;findMemberInfo(std::string name) : bool&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;findMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(int *&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;) : bool&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;printMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;std&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;::string name)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;printMemberInfo&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;(int&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;cardNum&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;int searchMemberID(int *cardNum) : int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;searchMemberName(int *cardNum) : char*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;searchMemberID(int *cardNum) : int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font face=&quot;맑은 고딕&quot;&gt;modifyMemberInfo(int *cardNum)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;memoryToDB&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;()&lt;/span&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
                     <mxGeometry x="1530" y="580" width="310" height="300" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
@@ -227,116 +233,55 @@
                 </mxCell>
                 <mxCell id="65" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1350" y="599.67" as="sourcePoint"/>
+                        <mxPoint x="1420" y="600" as="sourcePoint"/>
                         <mxPoint x="1440" y="599.67" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="66" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1250" y="490" as="sourcePoint"/>
-                        <mxPoint x="1400" y="489.99999999999983" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="67" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1250" y="489.9999999999999" as="sourcePoint"/>
-                        <mxPoint x="1250" y="540" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="68" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1400" y="490" as="sourcePoint"/>
-                        <mxPoint x="1400" y="469.9999999999998" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="69" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;entryX=0.7;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1480" y="490" as="sourcePoint"/>
-                        <mxPoint x="1480" y="471.30000000000007" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="70" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1480" y="490" as="sourcePoint"/>
-                        <mxPoint x="1630" y="489.9999999999998" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="71" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1630" y="489.9999999999999" as="sourcePoint"/>
-                        <mxPoint x="1630" y="540.0000000000001" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="72" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;DataBase&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;맑은 고딕&amp;#34;&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;memberList.bin&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" parent="1" vertex="1">
-                    <mxGeometry x="1920" y="650" width="160" height="90" as="geometry"/>
+                    <mxGeometry x="1860" y="650" width="160" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1840" y="599.23" as="sourcePoint"/>
-                        <mxPoint x="1990" y="599" as="targetPoint"/>
+                        <mxPoint x="1940" y="599" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="74" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1990" y="600" as="sourcePoint"/>
-                        <mxPoint x="1990" y="650" as="targetPoint"/>
+                        <mxPoint x="1940" y="600" as="sourcePoint"/>
+                        <mxPoint x="1940" y="650" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="75" value="View" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
-                    <mxGeometry x="1280" y="700" width="130" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="76" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;setViewState(int)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;lcdView()&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1280" y="740" width="130" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="77" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;entryX=0.553;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1350" y="650" as="sourcePoint"/>
-                        <mxPoint x="1349.8899999999999" y="700.45" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="78" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1260" y="650" as="sourcePoint"/>
-                        <mxPoint x="1350" y="650" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="79" value="" style="endArrow=none;html=1;fontFamily=Helvetica;fontSize=15;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1260" y="650" as="sourcePoint"/>
-                        <mxPoint x="1260" y="640" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="80" value="LCD" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="1280" y="840" width="190" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="81" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;WriteStringXY(int ,int, char)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1280" y="860" width="190" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="84" value="" style="endArrow=block;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;endFill=1;entryX=0.553;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1360" y="790" as="sourcePoint"/>
-                        <mxPoint x="1359.8899999999999" y="840.45" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="92" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=blockThin;endFill=1;" parent="1" source="85" target="90" edge="1">
+                <mxCell id="95" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="75" target="80">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="75" value="View" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1300" y="770" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;setModeState(int state)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;setSetState(int state)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;setName(char* name)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;lcdInitView()&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;lcdModeView()&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;lcdSetView()&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;lcdSetClear()&lt;/font&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="1300" y="810" width="160" height="143" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="LCD" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1285" y="987" width="190" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; text-align: justify ; direction: ltr ; unicode-bidi: embed&quot;&gt;WriteStringXY(int ,int, char)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="1285" y="1007" width="190" height="40" as="geometry"/>
+                </mxCell>
                 <mxCell id="85" value="ComDev" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
-                    <mxGeometry x="1070" y="920" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="1070" y="846.5" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=block;endFill=1;strokeColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="86" target="90">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;sendData(int *cardNum)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1070" y="960" width="170" height="30" as="geometry"/>
+                    <mxGeometry x="1070" y="886.5" width="170" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="tcpServer" style="swimlane;fontSize=15;fillColor=#FFFFFF;strokeColor=#36393d;fontColor=#000000;startSize=40;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="1000" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="960" y="980" width="280" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="91" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;sendData(int *cardNum)&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1290" y="1040" width="170" height="30" as="geometry"/>
+                <mxCell id="91" value="&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;getServerSocket() : int&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;getClientSocket() : int&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;getClientState() : bool&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;setClientState(bool state)&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;createSocket()&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;waitAccept() : int&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;recvData(char *recvBuff, size_t size) : int&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;sendData(char *recvBuff, size_t size) : int&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt ; margin-bottom: 0pt ; margin-left: 0in ; direction: ltr ; unicode-bidi: embed&quot;&gt;closeSocket(int socket);&lt;/p&gt;" style="whiteSpace=wrap;html=1;fontSize=15;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="1017" width="280" height="183" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

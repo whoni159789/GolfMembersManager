@@ -10,6 +10,9 @@
 #include "ComDev.h"
 #include "tcpServer.h"
 
+#include "LCD.h"
+#include "SPI.h"
+
 void serverThread(tcpServer *server)
 {
     char recvBuff[BUFSIZ];
@@ -37,8 +40,7 @@ int main(void)
     Controller *controller = new Controller(membersmanagerservice);
     Listener *listener = new Listener(controller);
     std::thread threadFunc(serverThread, cardtcpserver);
-    // golfMembershipManager golfMembershipManager;
-    // golfMembershipManager.run();
+
     while(1)
     {
         listener->checkEvent();

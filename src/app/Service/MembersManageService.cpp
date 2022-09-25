@@ -6,9 +6,10 @@
 MembersManageService::MembersManageService(ComDev *comdev)
 {
     membersentity = new MembersEntity();
-    membersManagerState = CARD_READER;
+    membersManagerState = CARD_INIT;
+    memberSetState = SET_OFF;
     view = new View();
-    view->lcdView();
+    view->lcdInitView();
     this->comdev = comdev;
 }
 
@@ -19,96 +20,235 @@ MembersManageService::~MembersManageService()
     delete comdev;
 }
 
-void MembersManageService::updateStateEvnet(std::string devName)
+void MembersManageService::updateModeStateEvent(std::string devName)
 {
+    if(memberSetState != SET_OFF)   return;
+
     switch(membersManagerState)
     {
+        case CARD_INIT:
+            if(devName == "ModeButton")
+            {
+                membersManagerState = CARD_READER;
+                view->setModeState(membersManagerState);
+                view->lcdModeView();
+                view->lcdSetView();
+            }
+        break;
+
         case CARD_READER:
             if(devName == "ModeButton")
             {
                 membersManagerState = CARD_REGISTER;
-                printf("Changed to CARD_REGISTER State\n");
-                view->setViewState(membersManagerState);
+                view->setModeState(membersManagerState);
+                view->lcdModeView();
+                view->lcdSetView();
             }
-            view->lcdView();
         break;
 
         case CARD_REGISTER:
             if(devName == "ModeButton")
             {
                 membersManagerState = CARD_REMOVER;
-                printf("Changed to CARD_REMOVER State\n");
-                view->setViewState(membersManagerState);
+                view->setModeState(membersManagerState);
+                view->lcdModeView();
+                view->lcdSetView();
             }
-            view->lcdView();
         break;
 
         case CARD_REMOVER:
             if(devName == "ModeButton")
             {
                 membersManagerState = CARD_MODIFIER;
-                printf("Changed to CARD_MODIFIER State\n");
-                view->setViewState(membersManagerState);
+                view->setModeState(membersManagerState);
+                view->lcdModeView();
+                view->lcdSetView();
             }
-            view->lcdView();
         break;
 
         case CARD_MODIFIER:
             if(devName == "ModeButton")
             {
-                membersManagerState = CARD_READER;
-                printf("Changed to CARD_READER State\n");
-                view->setViewState(membersManagerState);
+                membersManagerState = CARD_SAVE;
+                view->setModeState(membersManagerState);
+                view->lcdModeView();
+                view->lcdSetView();
             }
-            view->lcdView();
         break;
+
+        case CARD_SAVE:
+            if(devName == "ModeButton")
+            {
+                membersManagerState = CARD_READER;
+                view->setModeState(membersManagerState);
+                view->setSetState(memberSetState);
+                view->lcdModeView();
+                view->lcdSetView();
+            }
+        break;
+    }
+}
+
+void MembersManageService::updateSetStateEvent(std::string devName)
+{
+    if(membersManagerState == CARD_SAVE) return;
+
+    switch(memberSetState)
+    {
+        case SET_OFF:
+            if(devName == "CheckButton")
+            {
+                memberSetState = SET_READY;
+                view->setSetState(memberSetState);
+            }
+            view->lcdSetView();
+        break;
+
+        case SET_RUN_ERROR:
+            if(devName == "CheckButton")
+            {
+                memberSetState = SET_OFF;
+                view->setSetState(memberSetState);
+            }
+            view->lcdSetView();
+        break;
+
+        case SET_RUN_NORMAL:
+            if(devName == "CheckButton")
+            {
+                memberSetState = SET_OFF;
+                view->setSetState(memberSetState);
+            }
+            view->lcdSetView();
+        break;
+    }
+}
+
+void MembersManageService::updateResetEvent(std::string devName)
+{
+    if(devName == "ResetButton")
+    {
+        membersManagerState = CARD_READER;
+        memberSetState = SET_OFF;
+        view->setModeState(membersManagerState);
+        view->setSetState(memberSetState);
+        view->lcdModeView();
+        view->lcdSetView();
     }
 }
 
 void MembersManageService::checkCard(int *cardNum)
 {
-    static int idCount = 100001;
-
+    char* tempName;
     switch(membersManagerState)
     {
         case CARD_READER:
-            if(membersentity->findMemberInfo(cardNum))
+
+            switch(memberSetState)
             {
-                printf("Registered Member\n");
-                membersentity->printMemberInfo(cardNum);
-                comdev->sendData(cardNum);
-            }
-            else
-            {
-                printf("Not Registered Member\n");
+                case SET_READY:
+                    if(!membersentity->findMemberInfo(cardNum))
+                    {
+                        memberSetState = SET_RUN_ERROR;             // LCD State
+                        view->setSetState(memberSetState);          // LCD
+                        view->lcdSetView();
+                        return;
+                    }
+
+                    tempName = membersentity->searchMemberName(cardNum);
+                    membersentity->printMemberInfo(cardNum);    // Monitor
+                    comdev->sendData(cardNum);                  // Server -> Client
+                    memberSetState = SET_RUN_NORMAL;            // LCD State
+                    view->setName(tempName);
+                    view->setSetState(memberSetState);          // LCD
+                    view->lcdSetView();                         // LCD
+                break;
             }
         break;
 
         case CARD_REGISTER:
-            MemberInfo tempMember;
-            tempMember.id = idCount;
-            std::cout << "Name : ";
-            std::cin >> tempMember.name;
-            std::cout << "Address : ";
-            std::cin >> tempMember.address;
-            std::cout << "PhoneNumber : ";
-            std::cin >> tempMember.phoneNumber;
-            memcpy(tempMember.cardNum, cardNum, sizeof(tempMember.cardNum));
-            membersentity->addMemberInfo(tempMember);
-            std::cout << tempMember.name << " Registered!!\n"; 
-            idCount++;
+
+            switch(memberSetState)
+            {
+                case SET_READY:
+                    if(membersentity->findMemberInfo(cardNum))
+                    {
+                        memberSetState = SET_RUN_ERROR;
+                        view->setSetState(memberSetState);
+                        view->lcdSetView();
+                        return;
+                    }
+
+                    memberSetState = SET_RUN;
+                    view->setSetState(memberSetState);
+                    view->lcdSetView();
+                    membersentity->registerMember(cardNum);
+                    tempName = membersentity->searchMemberName(cardNum);
+                    view->setName(tempName);
+                    memberSetState = SET_RUN_NORMAL;
+                    view->setSetState(memberSetState);
+                    view->lcdSetView();
+                break;
+            }
         break;
 
         case CARD_REMOVER:
-            if(!membersentity->findMemberInfo(cardNum))
-                printf("Not Registered Card!\n");
-            membersentity->searchMemberInfo(cardNum);
-            if(membersentity->delMeberInfo(cardNum))
-                printf(" Removed!\n");
+            switch(memberSetState)
+            {
+                case SET_READY:
+                    if(!membersentity->findMemberInfo(cardNum))
+                    {
+                        memberSetState = SET_RUN_ERROR;
+                        view->setSetState(memberSetState);
+                        view->lcdSetView();
+                        return;
+                    }
+                    view->lcdSetClear();
+                    tempName = membersentity->searchMemberName(cardNum);
+                    view->setName(tempName);
+                    memberSetState = SET_RUN_NORMAL;
+                    view->setSetState(memberSetState);
+                    view->lcdSetView();
+                    membersentity->delMeberInfo(cardNum);
+
+                break;
+            }
         break;
 
         case CARD_MODIFIER:
-            membersentity->modifyMemberInfo(cardNum);
+            switch(memberSetState)
+            {
+                case SET_READY:
+                    if(!membersentity->findMemberInfo(cardNum))
+                    {
+                        memberSetState = SET_RUN_ERROR;
+                        view->setSetState(memberSetState);
+                        view->lcdSetView();
+                        return;
+                    }
+
+                    memberSetState = SET_RUN;
+                    view->setSetState(memberSetState);
+                    view->lcdSetView();
+
+                    membersentity->modifyMemberInfo(cardNum);
+                    memberSetState = SET_RUN_NORMAL;
+                    view->setSetState(memberSetState);
+                    view->lcdSetView();
+                break;
+            }
         break;
     }
+}
+
+void MembersManageService::updateSaveEvent(std::string devName)
+{
+    if(membersManagerState == CARD_SAVE && memberSetState == SET_OFF)
+    {
+        if(devName == "SaveButton")
+        {
+            std::cout << "\nmemberLists.txt, memberLists.bin Update!!\n";
+            membersentity->memoryToDB();
+        }
+    }   
 }

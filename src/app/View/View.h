@@ -5,18 +5,27 @@
 
 #include "LCD.h"
 #include "CardState.h"
+#include "SetState.h"
 
 class View
 {
 private:
-    LCD *lcd;
-    int viewState;
+    LCD *modelcd;
+    LCD *setlcd;
+    int modeState;
+    int setState;
+    char* Name;
 
 public:
     View();
     ~View();
-    void setViewState(int state);
-    void lcdView();
+    void setModeState(int state);
+    void setSetState(int state);
+    void setName(char* name);
+    void lcdInitView();
+    void lcdModeView();
+    void lcdSetView();
+    void lcdSetClear();
 
 };
 

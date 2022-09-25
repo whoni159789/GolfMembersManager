@@ -23,11 +23,23 @@ void Controller::updateEvent(DeviceData data)
 
     if(data.devName == "ModeButton")
     {
-        membersmanageservice->updateStateEvnet(data.devName);
+        membersmanageservice->updateModeStateEvent(data.devName);
     }
 
     if(data.devName == "CheckButton")
     {
-        membersmanageservice->updateStateEvnet(data.devName);
+        membersmanageservice->updateSetStateEvent(data.devName);
     }
+
+    if(data.devName == "ResetButton")
+    {
+        membersmanageservice->updateResetEvent(data.devName);
+    }
+
+    if(data.devName == "SaveButton")
+    {
+        membersmanageservice->updateSaveEvent(data.devName);
+    }
+
+
 }

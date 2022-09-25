@@ -13,6 +13,8 @@ private:
     CardReader *rfid;
     ManageButton *modeButton;
     ManageButton *checkButton;
+    ManageButton *resetButton;
+    ManageButton *saveButton;
     Controller *controller;
     uint8_t rfidData[16];
 

@@ -6,6 +6,8 @@ Listener::Listener(Controller *controller)
     rfid = new CardReader(new SPI(10, 3000000));
     modeButton = new ManageButton(27, "ModeButton");
     checkButton = new ManageButton(28, "CheckButton");
+    resetButton = new ManageButton(3, "ResetButton");
+    saveButton = new ManageButton(6, "SaveButton");
     this->controller = controller;
 }
 
@@ -27,6 +29,18 @@ void Listener::checkEvent()
     if(modeButton->checkButton())
     {
         controller->updateEvent(modeButton->getButtonData());
+    }
+    if(checkButton->checkButton())
+    {
+        controller->updateEvent(checkButton->getButtonData());
+    }
+    if(resetButton->checkButton())
+    {
+        controller->updateEvent(resetButton->getButtonData());
+    }
+    if(saveButton->checkButton())
+    {
+        controller->updateEvent(saveButton->getButtonData());
     }
 
 }

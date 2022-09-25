@@ -19,18 +19,17 @@ public:
     MembersEntity();
     ~MembersEntity();
     void loadMembersInfo();
+    void registerMember(int *cardNum);
     void addMemberInfo(MemberInfo member);
     bool delMeberInfo(int *cardNum);
-    void memoryToDB();
-    void printMemberInfo(int index);
-    void printMemberInfo(std::string name);
-    void printMemberInfo(int *cardNum);
-    bool findMemberInfo(int index);
     bool findMemberInfo(std::string name);
     bool findMemberInfo(int *cardNum);
-    void searchMemberInfo(int *cardNum);
+    void printMemberInfo(std::string name);
+    void printMemberInfo(int *cardNum);
     int searchMemberID(int *cardNum);
+    char* searchMemberName(int *cardNum);
     void modifyMemberInfo(int *cardNum);
+    void memoryToDB();
 };
 
 #endif
